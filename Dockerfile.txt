@@ -1,0 +1,11 @@
+# Используем образ Nginx
+FROM nginx:latest
+
+# Копируем файлы в директорию Nginx
+COPY . /usr/share/nginx/html/
+
+# Указываем, что контейнер должен прослушивать порт 80
+EXPOSE 80
+
+# Команда для запуска Nginx
+CMD ["nginx", "-g", "daemon off;"]
